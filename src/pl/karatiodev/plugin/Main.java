@@ -3,6 +3,7 @@ package pl.karatiodev.plugin;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;
+import pl.karatiodev.plugin.commands.FreeItemsCommand;
 import pl.karatiodev.plugin.listeners.*;
 
 public class Main extends JavaPlugin {
@@ -13,6 +14,10 @@ public class Main extends JavaPlugin {
         instance = this;
         saveDefaultConfig();
         registerListeners();
+    }
+
+    private void registerCommands(){
+        this.getCommand("freeitemy").setExecutor(new FreeItemsCommand());
     }
 
     private void registerListeners(){
