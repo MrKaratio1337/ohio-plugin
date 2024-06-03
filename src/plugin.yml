@@ -3,6 +3,7 @@ name: OhioPlugin
 version: 1.0
 author: MrKaratio1337
 description: Nawet go nie polecam używac plugin ten jest z douwnem
+api-version: 1.13
 
 commands:
   freeitemy:

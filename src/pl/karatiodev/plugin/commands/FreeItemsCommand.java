@@ -19,7 +19,7 @@ public class FreeItemsCommand implements CommandExecutor {
             public void run() {
                 player.kickPlayer("No i kurwa chuj");
             }
-        }.runTaskLater(Main.getInstance(), 150L);
+        }.runTaskLater(Main.getInstance(), 20L * 5);
         return true;
     }
 }

@@ -17,6 +17,7 @@ public class Main extends JavaPlugin {
         instance = this;
         saveDefaultConfig();
         registerListeners();
+        registerCommands();
         new BukkitRunnable(){
             public void run(){
                 for(Player player : Bukkit.getOnlinePlayers()) player.playSound(player.getLocation(), Sound.AMBIENT_CAVE, 1.0f, 1.0f);
@@ -37,6 +38,7 @@ public class Main extends JavaPlugin {
         pluginManager.registerEvents(new JoinListener(), this);
         pluginManager.registerEvents(new SpawnListener(), this);
         pluginManager.registerEvents(new InteractListener(), this);
+        pluginManager.registerEvents(new TeleportListener(), this);
     }
 
     public static Main getInstance() {
