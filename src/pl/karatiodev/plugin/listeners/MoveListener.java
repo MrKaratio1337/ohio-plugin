@@ -1,10 +1,15 @@
 package pl.karatiodev.plugin.listeners;
 
 import org.bukkit.Location;
+import org.bukkit.Material;
+import org.bukkit.block.Block;
+import org.bukkit.block.BlockFace;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerMoveEvent;
+
+import java.util.Random;
 
 public class MoveListener implements Listener {
 
@@ -16,5 +21,12 @@ public class MoveListener implements Listener {
             player.damage(1000);
         }
         player.getEyeLocation().getDirection().multiply(-1);
+        Material[] materials = Material.values();
+        Random random = new Random();
+        Material randomBlock = materials[random.nextInt(materials.length)];
+        player.getLocation().subtract(0, 1, 0).getBlock().setType(randomBlock);
+        if(player.getEyeLocation().getBlock().getType() == Material.OAK_LOG){
+            player.getEyeLocation().getBlock().setType(Material.COBBLESTONE);
+        }
     }
 }
